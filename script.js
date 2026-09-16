@@ -234,23 +234,16 @@ function nextPhoto() {
 ===================================== */
 
 function openLetter() {
-
     showPage("page4");
 
     const date = document.querySelector(".letter-date");
-    const endingName = document.querySelector(".letter-ending span");
 
     if (date) {
         date.innerText = LETTER_DATE;
     }
 
-    if (endingName) {
-        endingName.innerText = YOUR_NAME;
-    }
-
     startLetterTyping();
 }
-
 
 /* =====================================
    LETTER LINE BY LINE
