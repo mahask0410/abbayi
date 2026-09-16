@@ -177,42 +177,31 @@ function closeAccessoryPopup() {
 ===================================== */
 
 function loadPhoto() {
+  const image = document.getElementById("currentPhoto");
+  const caption = document.getElementById("photoCaption");
 
-    const image =
-        document.getElementById("currentPhoto");
+  image.style.opacity = "0";
 
-    const caption =
-        document.getElementById("photoCaption");
+  setTimeout(function () {
+    image.src = photos[currentPhoto].image;
+    caption.innerText = photos[currentPhoto].caption;
 
-    image.style.opacity = "0";
-
-    setTimeout(function () {
-
-        image.src = photos[currentPhoto].image;
-
-        caption.innerText =
-            photos[currentPhoto].caption;
-
-        image.style.opacity = "1";
-
-    }, 120);
-
+    image.onload = function () {
+      image.style.opacity = "1";
+    };
+  }, 150);
 }
 
-
 function nextPhoto() {
+  currentPhoto = currentPhoto + 1;
 
-    currentPhoto++;
+  if (currentPhoto >= photos.length) {
+    currentPhoto = 0;
+    showPage("page3");
+    return;
+  }
 
-    if (currentPhoto >= photos.length) {
-
-        showPage("page3");
-
-        return;
-    }
-
-    loadPhoto();
-
+  loadPhoto();
 }
 
 
