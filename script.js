@@ -2,7 +2,7 @@
    EASY EDIT SECTION
 ===================================== */
 
-const YOUR_NAME = "Praveen";
+const YOUR_NAME = "𝗇̶𝗂̶𝗂̶𝗂̶𝗂̶ Maalakshmi";
 
 const LETTER_DATE = "17 September 2026";
 
@@ -25,12 +25,12 @@ const photos = [
 
     {
         image: "photos/photo3.jpeg",
-        caption: "Bhanee"
+        caption: "pilaka bhavundhi mastaruu"
     },
 
     {
         image: "photos/photo4.jpeg",
-        caption: "Heeeee"
+        caption: "oka gadidha ni kavali ani marii kori thechukunna "
     }
 
 ];
@@ -40,25 +40,52 @@ const photos = [
    LETTER
 ===================================== */
 
-const LETTER = `Dear Abbayi garu,
+const LETTER = `Oye...,
 
-Puttina roju subhakanshalu.
+Bayapadaku propose cheyanu le
 
-I don't know how to properly start this letter,
+Hmm, ela start cheyalii.. Emani cheppali...
 
-so I thought I would just write whatever comes to my mind.
+9 months ayipothundhi mana parichayaniki..
+From stranger to nethranandam and to naku nachina first abbayi..
 
-Ippudu actual letter ikkada raayali.
+One of my friends asked me "Asalu relationships vadhu anukunnav, 
+ee abbayi tho marraiage antunnav,antha thakkuva time lo ala ela decide ayipoyav " ani.
 
-Nee own context ni ikkada paste cheyyachu.
+Vallaki ela cheppedhi parichayam kontha kaalame ayina chala connect ayipoya ani..
+Nitho life baguntadhi ani anipinchindi
 
-Every new line will appear one by one.
+Kanii nitho travel chesekodhi mana iddariki set avuthundha ane question mark?
 
-Take your time and read it slowly.
+Like nuv logical ga untaav,nenu emotional ga unta..
+niku drama nachadu,nachina abbayi daggara normal ga ela untaam cheppu
+Naku jealousy ekkuva, na husband nunchi attention,love kavali naku
+Even nakanna ma kuthurni ekkuva premisthe feel avtha emo
 
-Once again,
+Ila evo konni vishyallo anipinchindii
+Niku kuda anipinche untadhi ga
 
-Puttina Roju Subhakanshalu Abbayi.`;
+Every coin has two sides,nenu chaala manchidanni anukoku,assalu kaadhu
+
+I still want to travel with you...
+Nuv vellipovali anukunte eppudaina vellipovachu,nenu aapanu..
+Kalisi undali ante okarikosam okaru konni marpulu cheskovalsi vasthe..
+nenu ready ne.
+
+Happy birthday 
+I HATE YOU PRAVEEN
+
+Ni dreams anni nijam avvali ani korukuntunna
+Next year idhe time ki niku nachindi chesthu undali.. Either Mtech or Job
+Bhaga chaduvuko,Gate rank kottu
+I know you can,you has that capability
+Take care of your health abbayi
+
+Rey Gadidha english correct chesthe champutha
+
+Ippudu ee letter ki reply isthavo ledho kuda thelidhu
+naku thelusu nuvvem antavo
+reply expect cheyaku antaav
 
 
 /* =====================================
