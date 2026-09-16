@@ -1,100 +1,198 @@
+/* =========================
+   GENERAL
+========================= */
+
 * {
     box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background: #e8dcc3;
-    color: #33281f;
-    font-family: "Cormorant Garamond", serif;
+    margin: 0;
+    background:
+        radial-gradient(circle at center, #f3e8cf 0%, #e3d1ad 100%);
+    color: #34281f;
+
+    font-family:
+        "Cormorant Garamond",
+        "Noto Serif Telugu",
+        serif;
+
+    min-height: 100vh;
 }
+
+
+/* =========================
+   PAGE SYSTEM
+========================= */
 
 .page {
     display: none;
+
     min-height: 100vh;
-    width: 100%;
+
     align-items: center;
     justify-content: center;
-    padding: 30px 18px;
+
+    padding: 50px 20px;
+
+    position: relative;
+
+    animation: pageIn 0.45s ease;
 }
 
 .page.active {
     display: flex;
-    animation: fadeIn 0.8s ease;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes pageIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
+
+/* =========================
+   PAPER TEXTURE
+========================= */
+
+.page::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.18;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 4px,
+            rgba(70, 45, 25, 0.025) 5px
+        );
+}
+
+
+/* =========================
+   PAGE 1
+========================= */
 
 #page1 {
-    background:
-        radial-gradient(circle at center, #f6ecd7 0%, #e8dcc3 55%, #c9b89a 100%);
-}
-
-.intro-box,
-.photo-page,
-.letter-intro {
     text-align: center;
-    max-width: 800px;
+}
+
+.intro-box {
+    max-width: 700px;
     width: 100%;
+
+    padding: 40px 20px;
 }
 
-.small-heading {
-    font-family: "Special Elite", cursive;
-    font-size: 15px;
-    letter-spacing: 2px;
-    margin-bottom: 18px;
+.typewriter {
+    font-family: "Special Elite", monospace;
+
+    font-size: 17px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 25px;
 }
 
-h1 {
-    font-size: clamp(42px, 7vw, 72px);
+.intro-box h1 {
+    font-size: clamp(55px, 8vw, 85px);
+
     font-weight: 500;
-    margin: 10px 0 25px;
+
+    margin: 0 0 25px;
+
+    letter-spacing: -2px;
 }
 
 .question {
-    font-size: 27px;
-    margin-bottom: 30px;
+    font-size: 28px;
+
+    margin-bottom: 38px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    font-family:
+        "Cormorant Garamond",
+        "Noto Serif Telugu",
+        serif;
+
+    font-size: 19px;
+
+    color: #34281f;
+
+    background: rgba(246, 236, 214, 0.55);
+
+    border: 1px solid #5a4634;
+
+    padding: 12px 30px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+button:hover {
+    background: #34281f;
+
+    color: #f4e7cc;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 15px rgba(50, 35, 20, 0.15);
 }
 
 .options {
     display: flex;
+
     justify-content: center;
+
     gap: 18px;
-    flex-wrap: wrap;
 }
 
-button {
-    background: transparent;
-    color: #33281f;
-    border: 1px solid #33281f;
-    padding: 12px 28px;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 20px;
-    cursor: pointer;
-    transition: 0.25s ease;
-}
 
-button:hover {
-    background: #33281f;
-    color: #f6ecd7;
-}
+/* =========================
+   POPUP
+========================= */
 
 .popup {
     position: fixed;
+
     inset: 0;
-    background: rgba(35, 27, 20, 0.65);
+
+    background: rgba(40, 29, 20, 0.55);
+
     display: none;
+
     align-items: center;
+
     justify-content: center;
-    padding: 20px;
+
     z-index: 100;
 }
 
@@ -103,175 +201,424 @@ button:hover {
 }
 
 .popup-box {
-    width: min(90vw, 500px);
-    background: #f4e8cf;
-    padding: 38px 30px;
+    width: min(90%, 500px);
+
+    background:
+        linear-gradient(
+            rgba(245, 232, 204, 0.97),
+            rgba(232, 215, 181, 0.97)
+        );
+
+    padding: 40px 30px;
+
     text-align: center;
-    box-shadow: 0 15px 45px rgba(0,0,0,0.3);
+
+    border: 1px solid #70583f;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 .popup-box p {
-    font-size: 24px;
+    font-size: 23px;
+
     margin: 8px 0;
 }
 
 .popup-box button {
-    margin-top: 22px;
+    margin-top: 25px;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-button {
+    position: absolute;
+
+    top: 30px;
+    left: 35px;
+
+    font-size: 17px;
+
+    padding: 8px 18px;
+
+    background: transparent;
+}
+
+.letter-back-button {
+    position: fixed;
+
+    top: 25px;
+    left: 25px;
+
+    z-index: 20;
+
+    font-size: 17px;
+
+    padding: 8px 18px;
+
+    background: rgba(246, 234, 208, 0.7);
+}
+
+
+/* =========================
+   PHOTO PAGE
+========================= */
+
+#page2 {
+    text-align: center;
+}
+
+.photo-page {
+    width: 100%;
+
+    max-width: 900px;
+
+    position: relative;
+
+    padding-top: 25px;
+}
+
+.photo-page h1 {
+    font-size: clamp(38px, 6vw, 65px);
+
+    font-weight: 500;
+
+    margin: 5px 0 35px;
 }
 
 .photo-frame {
-    width: min(82vw, 500px);
-    margin: 20px auto;
-    padding: 14px;
-    background: #f8f0df;
-    box-shadow: 0 12px 35px rgba(60, 45, 30, 0.3);
+    display: inline-block;
+
+    background: #f5ecd9;
+
+    padding: 18px;
+
+    box-shadow:
+        0 15px 35px rgba(65, 43, 22, 0.25);
+
     transform: rotate(-1deg);
+
+    border: 1px solid rgba(80, 60, 40, 0.2);
+
+    animation: photoAppear 0.5s ease;
 }
 
 .photo-frame img {
-    width: 100%;
     display: block;
-    max-height: 60vh;
+
+    width: min(70vw, 470px);
+
+    max-height: 58vh;
+
     object-fit: contain;
-    filter: sepia(15%) contrast(95%) saturate(80%);
+
+    filter:
+        sepia(12%)
+        contrast(95%)
+        saturate(85%);
+
+    transition: opacity 0.25s ease;
+}
+
+@keyframes photoAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .photo-caption {
-    font-size: 22px;
+    font-size: 25px;
+
+    margin: 25px 0 22px;
+
     min-height: 30px;
 }
 
+.photo-controls {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+/* =========================
+   LETTER INTRO
+========================= */
+
+.letter-intro {
+    text-align: center;
+
+    width: min(90%, 700px);
+
+    position: relative;
+}
+
 .letter-intro h1 {
-    font-size: clamp(35px, 6vw, 60px);
+    font-size: clamp(40px, 6vw, 65px);
+
+    font-weight: 500;
+
+    margin: 10px 0 35px;
 }
 
 .old-paper-small {
-    background: #f3e5c8;
-    width: min(90vw, 500px);
-    margin: 25px auto;
-    padding: 25px;
-    box-shadow: 0 8px 25px rgba(60, 45, 30, 0.2);
+    width: min(90%, 420px);
+
+    margin: 0 auto 35px;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4e7ca,
+            #ead8b5
+        );
+
+    border: 1px solid rgba(80, 55, 30, 0.25);
+
+    box-shadow:
+        0 12px 30px rgba(65, 43, 22, 0.15);
+
+    font-size: 23px;
 }
 
-.old-paper-small p {
-    font-size: 22px;
-    margin: 8px;
-}
+
+/* =========================
+   LETTER PAGE
+========================= */
 
 .letter-page {
     align-items: flex-start;
+
+    padding-top: 65px;
+
     background:
-        radial-gradient(circle at center, #e9d8b8 0%, #cbb894 100%);
-    padding: 5vh 15px;
+        radial-gradient(
+            circle at center,
+            #e8d5af,
+            #cfb98d
+        );
 }
 
 .paper {
+    width: min(94vw, 800px);
+
+    min-height: 88vh;
+
     position: relative;
-    width: min(95vw, 760px);
-    min-height: 90vh;
-    padding: 70px clamp(28px, 7vw, 75px);
-    background: #f4e8cf;
-    box-shadow: 0 15px 45px rgba(45, 32, 20, 0.35);
+
+    padding: 55px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5e9cf,
+            #ead7b2
+        );
+
+    border: 1px solid rgba(91, 68, 43, 0.25);
+
+    box-shadow:
+        0 20px 45px rgba(50, 35, 20, 0.25);
+
     overflow: hidden;
 }
 
 .paper::before {
     content: "";
+
     position: absolute;
+
     inset: 0;
+
     pointer-events: none;
-    opacity: 0.18;
+
     background:
         repeating-linear-gradient(
             0deg,
-            transparent,
-            transparent 4px,
-            rgba(90, 65, 40, 0.12) 5px
+            transparent 0px,
+            transparent 5px,
+            rgba(80, 55, 30, 0.025) 6px
         );
 }
 
 .paper::after {
     content: "";
+
     position: absolute;
-    inset: 18px;
-    border: 1px solid rgba(80, 55, 35, 0.22);
+
+    inset: 16px;
+
+    border: 1px solid rgba(100, 75, 45, 0.25);
+
     pointer-events: none;
 }
 
 .paper-content {
     position: relative;
+
     z-index: 2;
 }
 
 .letter-date {
     text-align: right;
+
     font-size: 18px;
+
     margin-bottom: 35px;
 }
 
 .paper h2 {
-    font-size: 31px;
+    font-size: 34px;
+
     font-weight: 500;
-    margin-bottom: 28px;
+
+    margin-bottom: 25px;
 }
 
+
+/* =========================
+   LETTER TEXT
+========================= */
+
 #letterText {
-    font-family: "Noto Serif Telugu", "Cormorant Garamond", serif;
-    font-size: 22px;
-    line-height: 2;
-    white-space: pre-line;
+    font-family:
+        "Noto Serif Telugu",
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 23px;
+
+    line-height: 1.9;
+
+    letter-spacing: 0.1px;
 }
 
 .letter-line {
     opacity: 0;
-    animation: lineAppear 1s ease forwards;
+
+    animation: lineAppear 0.45s ease forwards;
+
+    margin-bottom: 3px;
 }
 
 @keyframes lineAppear {
+
     from {
         opacity: 0;
+
         transform: translateY(5px);
     }
+
     to {
         opacity: 1;
+
         transform: translateY(0);
     }
 }
 
 .letter-ending {
     display: none;
+
     margin-top: 35px;
-    font-family: "Noto Serif Telugu", "Cormorant Garamond", serif;
-    font-size: 22px;
-    line-height: 1.8;
+
+    font-size: 23px;
+
+    line-height: 1.7;
 }
 
+
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 600px) {
+
     .page {
-        padding: 25px 14px;
+        padding: 70px 15px 35px;
+    }
+
+    .intro-box h1 {
+        font-size: 55px;
+
+        letter-spacing: -1px;
     }
 
     .question {
-        font-size: 23px;
+        font-size: 24px;
     }
 
-    button {
-        font-size: 18px;
-        padding: 10px 22px;
+    .options {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 12px;
+    }
+
+    .options button {
+        width: 190px;
+    }
+
+    .back-button {
+        top: 18px;
+        left: 18px;
+    }
+
+    .photo-page h1 {
+        font-size: 38px;
+
+        margin-top: 25px;
+    }
+
+    .photo-frame {
+        padding: 12px;
+    }
+
+    .photo-frame img {
+        width: 78vw;
+
+        max-height: 52vh;
+    }
+
+    .photo-caption {
+        font-size: 22px;
     }
 
     .paper {
-        min-height: 95vh;
-        padding: 55px 28px;
-    }
+        width: 95vw;
 
-    #letterText,
-    .letter-ending {
-        font-size: 18px;
-        line-height: 1.9;
+        padding: 45px 28px;
+
+        min-height: 85vh;
     }
 
     .paper h2 {
-        font-size: 27px;
+        font-size: 30px;
+    }
+
+    #letterText {
+        font-size: 20px;
+
+        line-height: 1.85;
+    }
+
+    .letter-back-button {
+        top: 12px;
+
+        left: 12px;
+
+        font-size: 15px;
     }
 }
