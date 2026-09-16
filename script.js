@@ -2,20 +2,20 @@
 // EASY EDIT SECTION
 // ================================
 
-const YOUR_NAME = "Your Name";
-const LETTER_DATE = "15 September 2026";
+const YOUR_NAME = "Praveen";
+const LETTER_DATE = "17 September 2026";
 
 const photos = [
-    { image: "photos/photo1.jpg", caption: "A little memory..." },
-    { image: "photos/photo2.jpg", caption: "Another one worth keeping." },
-    { image: "photos/photo3.jpg", caption: "Some moments stay." },
-    { image: "photos/photo4.jpg", caption: "One more memory." }
+    { image: "photos/photo1.jpeg", caption: "Chinna Packet" },
+    { image: "photos/photo2.jpeg", caption: "Nuvvena ra idi,entha amayakanga unnavo" },
+    { image: "photos/photo3.jpeg", caption: "Bhanee" },
+    { image: "photos/photo4.jpeg", caption: "Heeeeee" }
 ];
 
 // Replace the text below with your own Telugu + English letter.
 // Keep each new line on a separate line.
 
-const LETTER = `First of all,
+const LETTER = `Dear Abbayi garu,
 
 Puttina roju subhakanshalu.
 
