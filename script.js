@@ -85,7 +85,7 @@ Rey Gadidha english correct chesthe champutha
 
 Ippudu ee letter ki reply isthavo ledho kuda thelidhu
 naku thelusu nuvvem antavo
-reply expect cheyaku antaav
+reply expect cheyaku antaav`;
 
 
 /* =====================================
@@ -93,21 +93,23 @@ reply expect cheyaku antaav
 ===================================== */
 
 let currentPhoto = 0;
-
 let currentPage = "page1";
 
 
 function showPage(pageId, addHistory = true) {
 
-    document
-        .querySelectorAll(".page")
-        .forEach(page => {
-            page.classList.remove("active");
-        });
+    document.querySelectorAll(".page").forEach(function(page) {
+        page.classList.remove("active");
+    });
 
-    document
-        .getElementById(pageId)
-        .classList.add("active");
+    const page = document.getElementById(pageId);
+
+    if (!page) {
+        console.error("Page not found:", pageId);
+        return;
+    }
+
+    page.classList.add("active");
 
     currentPage = pageId;
 
@@ -117,15 +119,12 @@ function showPage(pageId, addHistory = true) {
     });
 
     if (addHistory) {
-
         history.pushState(
             { page: pageId },
             "",
             "#" + pageId
         );
-
     }
-
 }
 
 
@@ -140,7 +139,6 @@ function chooseLetter() {
     showPage("page2");
 
     loadPhoto();
-
 }
 
 
@@ -150,25 +148,27 @@ function chooseLetter() {
 
 function chooseAccessories() {
 
-    document
-        .getElementById("accessoryPopup")
-        .classList.add("show");
+    const popup = document.getElementById("accessoryPopup");
 
+    if (popup) {
+        popup.classList.add("show");
+    }
 }
 
 
 function closeAccessoryPopup() {
 
-    document
-        .getElementById("accessoryPopup")
-        .classList.remove("show");
+    const popup = document.getElementById("accessoryPopup");
+
+    if (popup) {
+        popup.classList.remove("show");
+    }
 
     currentPhoto = 0;
 
     showPage("page2");
 
     loadPhoto();
-
 }
 
 
@@ -177,31 +177,55 @@ function closeAccessoryPopup() {
 ===================================== */
 
 function loadPhoto() {
-  const image = document.getElementById("currentPhoto");
-  const caption = document.getElementById("photoCaption");
 
-  image.style.opacity = "0";
+    const image = document.getElementById("currentPhoto");
+    const caption = document.getElementById("photoCaption");
 
-  setTimeout(function () {
-    image.src = photos[currentPhoto].image;
-    caption.innerText = photos[currentPhoto].caption;
+    if (!image || !caption) {
+        console.error("Photo elements not found");
+        return;
+    }
 
-    image.onload = function () {
-      image.style.opacity = "1";
-    };
-  }, 150);
+    const photo = photos[currentPhoto];
+
+    if (!photo) {
+        console.error("Photo not found:", currentPhoto);
+        return;
+    }
+
+    image.style.opacity = "0";
+
+    setTimeout(function() {
+
+        image.src = photo.image;
+
+        caption.innerText = photo.caption;
+
+        image.onload = function() {
+            image.style.opacity = "1";
+        };
+
+        image.onerror = function() {
+            console.error("Unable to load image:", photo.image);
+            image.style.opacity = "1";
+        };
+
+    }, 150);
 }
 
+
 function nextPhoto() {
-  currentPhoto = currentPhoto + 1;
 
-  if (currentPhoto >= photos.length) {
-    currentPhoto = 0;
-    showPage("page3");
-    return;
-  }
+    currentPhoto++;
 
-  loadPhoto();
+    if (currentPhoto >= photos.length) {
+
+        showPage("page3");
+
+        return;
+    }
+
+    loadPhoto();
 }
 
 
@@ -213,26 +237,34 @@ function openLetter() {
 
     showPage("page4");
 
-    document
-        .querySelector(".letter-date")
-        .innerText = LETTER_DATE;
+    const date = document.querySelector(".letter-date");
+    const endingName = document.querySelector(".letter-ending span");
 
-    document
-        .querySelector(".letter-ending span")
-        .innerText = YOUR_NAME;
+    if (date) {
+        date.innerText = LETTER_DATE;
+    }
+
+    if (endingName) {
+        endingName.innerText = YOUR_NAME;
+    }
 
     startLetterTyping();
-
 }
 
 
+/* =====================================
+   LETTER LINE BY LINE
+===================================== */
+
 function startLetterTyping() {
 
-    const container =
-        document.getElementById("letterText");
+    const container = document.getElementById("letterText");
+    const ending = document.getElementById("letterEnding");
 
-    const ending =
-        document.getElementById("letterEnding");
+    if (!container || !ending) {
+        console.error("Letter elements not found");
+        return;
+    }
 
     container.innerHTML = "";
 
@@ -247,18 +279,15 @@ function startLetterTyping() {
 
         if (lineNumber >= lines.length) {
 
-            setTimeout(function () {
-
+            setTimeout(function() {
                 ending.style.display = "block";
-
             }, 500);
 
             return;
         }
 
 
-        const line =
-            document.createElement("div");
+        const line = document.createElement("div");
 
         line.className = "letter-line";
 
@@ -269,8 +298,7 @@ function startLetterTyping() {
 
         } else {
 
-            line.innerText =
-                lines[lineNumber];
+            line.innerText = lines[lineNumber];
 
         }
 
@@ -280,16 +308,11 @@ function startLetterTyping() {
         lineNumber++;
 
 
-        /* Faster than before:
-           900ms → 500ms */
-
         setTimeout(showNextLine, 500);
-
     }
 
 
     showNextLine();
-
 }
 
 
@@ -308,11 +331,12 @@ function goBack() {
    BROWSER BACK BUTTON
 ===================================== */
 
-window.addEventListener("popstate", function (event) {
+window.addEventListener("popstate", function(event) {
 
     if (event.state && event.state.page) {
 
         showPage(event.state.page, false);
+
 
         if (event.state.page === "page2") {
 
@@ -335,7 +359,7 @@ window.addEventListener("popstate", function (event) {
    INITIAL PAGE
 ===================================== */
 
-window.addEventListener("load", function () {
+window.addEventListener("load", function() {
 
     history.replaceState(
         { page: "page1" },
