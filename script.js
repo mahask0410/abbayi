@@ -2,7 +2,7 @@
    EASY EDIT SECTION
 ===================================== */
 
-const YOUR_NAME = " 𝗇̶𝗂̶𝗂̶𝗂̶𝗂̶ Maalakshmi";
+const YOUR_NAME = "Maalakshmi";
 
 const LETTER_DATE = "17 September 2026";
 
