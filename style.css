@@ -1,0 +1,277 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    background: #e8dcc3;
+    color: #33281f;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.page {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 18px;
+}
+
+.page.active {
+    display: flex;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#page1 {
+    background:
+        radial-gradient(circle at center, #f6ecd7 0%, #e8dcc3 55%, #c9b89a 100%);
+}
+
+.intro-box,
+.photo-page,
+.letter-intro {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.small-heading {
+    font-family: "Special Elite", cursive;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: clamp(42px, 7vw, 72px);
+    font-weight: 500;
+    margin: 10px 0 25px;
+}
+
+.question {
+    font-size: 27px;
+    margin-bottom: 30px;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+button {
+    background: transparent;
+    color: #33281f;
+    border: 1px solid #33281f;
+    padding: 12px 28px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+button:hover {
+    background: #33281f;
+    color: #f6ecd7;
+}
+
+.popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(35, 27, 20, 0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 100;
+}
+
+.popup.show {
+    display: flex;
+}
+
+.popup-box {
+    width: min(90vw, 500px);
+    background: #f4e8cf;
+    padding: 38px 30px;
+    text-align: center;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.3);
+}
+
+.popup-box p {
+    font-size: 24px;
+    margin: 8px 0;
+}
+
+.popup-box button {
+    margin-top: 22px;
+}
+
+.photo-frame {
+    width: min(82vw, 500px);
+    margin: 20px auto;
+    padding: 14px;
+    background: #f8f0df;
+    box-shadow: 0 12px 35px rgba(60, 45, 30, 0.3);
+    transform: rotate(-1deg);
+}
+
+.photo-frame img {
+    width: 100%;
+    display: block;
+    max-height: 60vh;
+    object-fit: contain;
+    filter: sepia(15%) contrast(95%) saturate(80%);
+}
+
+.photo-caption {
+    font-size: 22px;
+    min-height: 30px;
+}
+
+.letter-intro h1 {
+    font-size: clamp(35px, 6vw, 60px);
+}
+
+.old-paper-small {
+    background: #f3e5c8;
+    width: min(90vw, 500px);
+    margin: 25px auto;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(60, 45, 30, 0.2);
+}
+
+.old-paper-small p {
+    font-size: 22px;
+    margin: 8px;
+}
+
+.letter-page {
+    align-items: flex-start;
+    background:
+        radial-gradient(circle at center, #e9d8b8 0%, #cbb894 100%);
+    padding: 5vh 15px;
+}
+
+.paper {
+    position: relative;
+    width: min(95vw, 760px);
+    min-height: 90vh;
+    padding: 70px clamp(28px, 7vw, 75px);
+    background: #f4e8cf;
+    box-shadow: 0 15px 45px rgba(45, 32, 20, 0.35);
+    overflow: hidden;
+}
+
+.paper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.18;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 4px,
+            rgba(90, 65, 40, 0.12) 5px
+        );
+}
+
+.paper::after {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(80, 55, 35, 0.22);
+    pointer-events: none;
+}
+
+.paper-content {
+    position: relative;
+    z-index: 2;
+}
+
+.letter-date {
+    text-align: right;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.paper h2 {
+    font-size: 31px;
+    font-weight: 500;
+    margin-bottom: 28px;
+}
+
+#letterText {
+    font-family: "Noto Serif Telugu", "Cormorant Garamond", serif;
+    font-size: 22px;
+    line-height: 2;
+    white-space: pre-line;
+}
+
+.letter-line {
+    opacity: 0;
+    animation: lineAppear 1s ease forwards;
+}
+
+@keyframes lineAppear {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.letter-ending {
+    display: none;
+    margin-top: 35px;
+    font-family: "Noto Serif Telugu", "Cormorant Garamond", serif;
+    font-size: 22px;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding: 25px 14px;
+    }
+
+    .question {
+        font-size: 23px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 10px 22px;
+    }
+
+    .paper {
+        min-height: 95vh;
+        padding: 55px 28px;
+    }
+
+    #letterText,
+    .letter-ending {
+        font-size: 18px;
+        line-height: 1.9;
+    }
+
+    .paper h2 {
+        font-size: 27px;
+    }
+}

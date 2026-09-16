@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Small Surprise</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+Telugu:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section id="page1" class="page active">
+    <div class="intro-box">
+        <p class="small-heading">A little question...</p>
+        <h1>Hello Abbayi</h1>
+        <p class="question">What do you like most?</p>
+
+        <div class="options">
+            <button onclick="chooseLetter()">Letters</button>
+            <button onclick="chooseAccessories()">Accessories</button>
+        </div>
+    </div>
+</section>
+
+<div id="accessoryPopup" class="popup">
+    <div class="popup-box">
+        <p>Ippudu antha budget ledhule...</p>
+        <p>Next time konta.</p>
+        <p>Prasthuthaniki letter tho adjust ayipo.</p>
+        <button onclick="goToPhotos()">Sare, Letter</button>
+    </div>
+</div>
+
+<section id="page2" class="page">
+    <div class="photo-page">
+        <p class="small-heading">For you</p>
+        <h1>Puttina Roju Subhakanshalu Abbayi</h1>
+
+        <div class="photo-frame">
+            <img id="currentPhoto" src="photos/photo1.jpg" alt="Birthday photo">
+        </div>
+
+        <p id="photoCaption" class="photo-caption"></p>
+
+        <div class="photo-controls">
+            <button id="nextPhotoButton" onclick="nextPhoto()">Next</button>
+        </div>
+    </div>
+</section>
+
+<section id="page3" class="page">
+    <div class="letter-intro">
+        <p class="small-heading">One last thing...</p>
+        <h1>I wrote something for you.</h1>
+
+        <div class="old-paper-small">
+            <p>Take your time.</p>
+            <p>Read it slowly.</p>
+        </div>
+
+        <button onclick="openLetter()">Read the Letter</button>
+    </div>
+</section>
+
+<section id="page4" class="page letter-page">
+    <div class="paper">
+        <div class="paper-content">
+            <div class="letter-date"></div>
+
+            <h2>Dear Abbayi,</h2>
+
+            <div id="letterText"></div>
+
+            <div id="letterEnding" class="letter-ending">
+                From,<br>
+                <span>Your Name</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
