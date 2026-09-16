@@ -622,3 +622,508 @@ button:hover {
         font-size: 15px;
     }
 }
+/* =========================================
+   FINAL VINTAGE DESIGN + DESKTOP BACK FIX
+   ========================================= */
+
+body {
+  background:
+    radial-gradient(
+      circle at center,
+      #f1e4c8 0%,
+      #e3d0a8 55%,
+      #d2bb91 100%
+    );
+  color: #3b2b20;
+}
+
+/* -----------------------------------------
+   GENERAL PAGE
+   ----------------------------------------- */
+
+.page {
+  padding: 85px 30px 55px;
+}
+
+/* -----------------------------------------
+   BACK BUTTON - DESKTOP FIX
+   ----------------------------------------- */
+
+.back-button {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+
+  z-index: 30;
+
+  font-family:
+    "Cormorant Garamond",
+    "Noto Serif Telugu",
+    serif;
+
+  font-size: 18px;
+  letter-spacing: 0.3px;
+
+  padding: 9px 17px;
+
+  color: #4a3526;
+
+  background: rgba(246, 234, 208, 0.82);
+
+  border: 1px solid rgba(92, 65, 40, 0.35);
+
+  box-shadow:
+    0 4px 12px rgba(60, 40, 20, 0.12);
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.back-button:hover {
+  background: #f3e4c5;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 16px rgba(60, 40, 20, 0.18);
+}
+
+
+/* -----------------------------------------
+   PHOTO PAGE
+   ----------------------------------------- */
+
+.photo-page {
+  width: 100%;
+  max-width: 900px;
+
+  position: relative;
+
+  padding-top: 45px;
+}
+
+.photo-page h1 {
+  font-family:
+    "Cormorant Garamond",
+    "Noto Serif Telugu",
+    serif;
+
+  font-size: clamp(42px, 5vw, 62px);
+
+  font-weight: 500;
+
+  line-height: 1.05;
+
+  letter-spacing: 0.3px;
+
+  margin:
+    20px auto 35px;
+
+  max-width: 850px;
+}
+
+.photo-frame {
+  background:
+    linear-gradient(
+      145deg,
+      #f8efd9,
+      #ead8b5
+    );
+
+  padding: 20px;
+
+  border: 1px solid rgba(91, 66, 43, 0.3);
+
+  box-shadow:
+    0 18px 38px rgba(65, 43, 22, 0.25);
+
+  transform: rotate(-0.7deg);
+
+  position: relative;
+}
+
+.photo-frame::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 7px;
+
+  border: 1px solid rgba(100, 72, 43, 0.18);
+
+  pointer-events: none;
+}
+
+.photo-frame img {
+  position: relative;
+  z-index: 2;
+
+  display: block;
+
+  width: min(70vw, 470px);
+
+  max-height: 58vh;
+
+  object-fit: contain;
+}
+
+.photo-caption {
+  font-family:
+    "Noto Serif Telugu",
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 25px;
+
+  color: #493527;
+
+  margin:
+    28px 0 24px;
+
+  min-height: 30px;
+}
+
+
+/* -----------------------------------------
+   BUTTONS
+   ----------------------------------------- */
+
+.options button,
+.photo-controls button,
+.letter-intro button,
+.popup-box button {
+  font-family:
+    "Cormorant Garamond",
+    "Noto Serif Telugu",
+    serif;
+
+  font-size: 18px;
+
+  letter-spacing: 0.4px;
+
+  color: #f7ecd5;
+
+  background: #3b2a20;
+
+  border: 1px solid #513a29;
+
+  padding: 11px 25px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 14px rgba(50, 30, 15, 0.18);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.options button:hover,
+.photo-controls button:hover,
+.letter-intro button:hover,
+.popup-box button:hover {
+  background: #513a29;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 18px rgba(50, 30, 15, 0.24);
+}
+
+
+/* -----------------------------------------
+   LETTER INTRO
+   ----------------------------------------- */
+
+.letter-intro {
+  padding-top: 35px;
+}
+
+.letter-intro h1 {
+  font-family:
+    "Cormorant Garamond",
+    "Noto Serif Telugu",
+    serif;
+
+  font-size: clamp(42px, 5vw, 62px);
+
+  line-height: 1.1;
+
+  font-weight: 500;
+
+  margin:
+    20px 0 35px;
+}
+
+
+/* -----------------------------------------
+   LETTER PAGE
+   ----------------------------------------- */
+
+.letter-page {
+  padding-top: 90px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #e7d3aa 0%,
+      #d6bf93 60%,
+      #c6aa78 100%
+    );
+}
+
+/* Letter Back button */
+
+.letter-back-button {
+  position: fixed;
+
+  top: 22px;
+  left: 28px;
+
+  z-index: 100;
+
+  font-family:
+    "Cormorant Garamond",
+    "Noto Serif Telugu",
+    serif;
+
+  font-size: 18px;
+
+  color: #4a3526;
+
+  padding: 9px 17px;
+
+  background: rgba(246, 234, 208, 0.9);
+
+  border: 1px solid rgba(92, 65, 40, 0.35);
+
+  box-shadow:
+    0 4px 12px rgba(60, 40, 20, 0.15);
+}
+
+
+/* -----------------------------------------
+   OLD PAPER
+   ----------------------------------------- */
+
+.paper {
+  width: min(92vw, 800px);
+
+  min-height: 88vh;
+
+  padding: 58px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7ecd5,
+      #ead7b2
+    );
+
+  border: 1px solid rgba(91, 68, 43, 0.3);
+
+  box-shadow:
+    0 22px 50px rgba(50, 35, 20, 0.28);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.paper::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 5px,
+      rgba(80, 55, 30, 0.025) 6px
+    );
+}
+
+.paper::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 17px;
+
+  border: 1px solid rgba(100, 75, 45, 0.28);
+
+  pointer-events: none;
+}
+
+.paper-content {
+  position: relative;
+
+  z-index: 2;
+}
+
+.paper h2 {
+  font-family:
+    "Cormorant Garamond",
+    "Noto Serif Telugu",
+    serif;
+
+  font-size: 35px;
+
+  font-weight: 500;
+
+  color: #3c2b20;
+
+  margin-bottom: 28px;
+}
+
+#letterText {
+  font-family:
+    "Noto Serif Telugu",
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 23px;
+
+  line-height: 1.9;
+
+  color: #3b2b20;
+}
+
+
+/* -----------------------------------------
+   POPUP
+   ----------------------------------------- */
+
+.popup {
+  background: rgba(47, 34, 24, 0.58);
+}
+
+.popup-box {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(248, 237, 213, 0.98),
+      rgba(232, 215, 181, 0.98)
+    );
+
+  border: 1px solid rgba(91, 65, 40, 0.45);
+
+  box-shadow:
+    0 25px 60px rgba(35, 23, 14, 0.35);
+
+  padding: 42px 32px;
+}
+
+.popup-box p {
+  color: #403025;
+
+  font-family:
+    "Cormorant Garamond",
+    "Noto Serif Telugu",
+    serif;
+
+  font-size: 23px;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .page {
+    padding:
+      75px 15px 35px;
+  }
+
+  .back-button {
+    top: 16px;
+    left: 15px;
+
+    font-size: 16px;
+
+    padding: 7px 14px;
+  }
+
+  .photo-page {
+    padding-top: 35px;
+  }
+
+  .photo-page h1 {
+    font-size: 38px;
+
+    line-height: 1.12;
+
+    margin:
+      20px auto 28px;
+  }
+
+  .photo-frame {
+    padding: 12px;
+  }
+
+  .photo-frame img {
+    width: 78vw;
+    max-height: 52vh;
+  }
+
+  .photo-caption {
+    font-size: 21px;
+  }
+
+  .letter-page {
+    padding-top: 70px;
+  }
+
+  .letter-back-button {
+    top: 12px;
+    left: 12px;
+
+    font-size: 15px;
+
+    padding: 7px 13px;
+  }
+
+  .paper {
+    width: 95vw;
+
+    min-height: 85vh;
+
+    padding:
+      48px 28px;
+  }
+
+  .paper h2 {
+    font-size: 30px;
+  }
+
+  #letterText {
+    font-size: 20px;
+
+    line-height: 1.85;
+  }
+
+  .popup-box {
+    width: 88%;
+
+    padding:
+      35px 22px;
+  }
+
+  .popup-box p {
+    font-size: 20px;
+  }
+}
+
