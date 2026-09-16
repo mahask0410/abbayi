@@ -50,7 +50,7 @@ Hmm, ela start cheyalii.. Emani cheppali...
 From stranger to nethranandam and to naku nachina first abbayi..
 
 One of my friends asked me "Asalu relationships vadhu anukunnav, 
-ee abbayi tho marraiage antunnav,antha thakkuva time lo ala ela decide ayipoyav " ani.
+ee abbayi tho marriage antunnav,antha thakkuva time lo ala ela decide ayipoyav " ani.
 
 Vallaki ela cheppedhi parichayam kontha kaalame ayina chala connect ayipoya ani..
 Nitho life baguntadhi ani anipinchindi
